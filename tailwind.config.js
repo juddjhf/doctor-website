@@ -4,9 +4,9 @@ export default {
   theme: {
     extend: {
       colors: {
-        ink: '#12303d',
-        teal: '#159b91',
-        mist: '#f1f8f8',
+        ink: '#123047',
+        teal: '#2ca6a4',
+        mist: '#f7fafc',
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],

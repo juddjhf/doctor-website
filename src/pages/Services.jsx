@@ -3,9 +3,14 @@ import { Check } from 'lucide-react'
 import Button from '../components/Button'
 import ServiceCard from '../components/ServiceCard'
 import { services } from '../data/services'
+import useClinicData from '../hooks/useClinicData'
+import ApiNotice from '../components/ApiNotice'
+import LoadingCards from '../components/LoadingCards'
 
 export default function Services() {
   const { onBook } = useOutletContext()
+  const { data: liveServices, loading, error } = useClinicData('/services', services)
+  const serviceItems = liveServices
   return (
     <>
       <section className="page-hero services-page-hero">
@@ -17,7 +22,8 @@ export default function Services() {
       <section className="section services-all">
         <div className="container">
           <div className="section-heading"><div><span className="eyebrow">OUR SERVICES</span><h2>All the care you need, <span>under one roof.</span></h2></div><p className="heading-description">Every treatment starts with a conversation. We’ll take the time to understand your needs, explain your options, and make a plan that feels right.</p></div>
-          <div className="services-grid services-grid-full">{services.map((service) => <ServiceCard key={service.title} service={service} onBook={onBook} />)}</div>
+          {loading ? <LoadingCards count={6} /> : serviceItems.length ? <div className="services-grid services-grid-full">{serviceItems.map((service) => <ServiceCard key={service._id || service.title} service={service} />)}</div> : <div className="empty-state">No services are available right now.</div>}
+          <ApiNotice message={error} />
         </div>
       </section>
       <section className="service-promise">

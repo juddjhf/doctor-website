@@ -1,5 +1,5 @@
 {
-  "name": "dental-website",
+  "name": "smilecraft-dental-studio",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -16,7 +16,9 @@
     "react": "^19.3.1",
     "react-dom": "^19.3.1",
     "react-router-dom": "^7.18.5",
-    "tailwindcss": "^3.4.17"
+    "tailwindcss": "^3.4.17",
+    "axios": "^1.10.0",
+    "framer-motion": "^12.23.12"
   },
   "devDependencies": {
     "@types/react": "^19.3.0",

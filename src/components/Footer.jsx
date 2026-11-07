@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 const currentYear = new Date().getFullYear()
 
-export default function Footer({ onBook }) {
+export default function Footer() {
   return (
     <footer className="site-footer">
       <div className="container">
@@ -11,7 +11,7 @@ export default function Footer({ onBook }) {
           <div className="footer-brand">
             <Link className="brand brand-light" to="/">
               <span className="brand-mark" aria-hidden="true"><span /></span>
-              <span className="brand-name">smilecare<span>.</span><small>DENTAL STUDIO</small></span>
+              <span className="brand-name">smilecraft<span>.</span><small>DENTAL STUDIO</small></span>
             </Link>
             <p>Thoughtful dentistry for the smile you’re in.</p>
             <div className="social-links">
@@ -21,7 +21,7 @@ export default function Footer({ onBook }) {
           </div>
           <div className="footer-column">
             <h3>Explore</h3>
-            <Link to="/about">Our story</Link><Link to="/services">Dental services</Link><Link to="/doctors">Meet the team</Link><Link to="/contact">Contact us</Link>
+            <Link to="/about">Our story</Link><Link to="/services">Dental services</Link><Link to="/team">Meet the team</Link><Link to="/contact">Contact us</Link><Link to="/privacy-policy">Privacy policy</Link>
           </div>
           <div className="footer-column">
             <h3>Visit us</h3>
@@ -31,11 +31,11 @@ export default function Footer({ onBook }) {
           <div className="footer-appointment">
             <span className="eyebrow eyebrow-light">A healthier smile starts here</span>
             <h3>Let’s make your next visit feel different.</h3>
-            <button type="button" className="footer-link" onClick={onBook}>Request a visit <ArrowUpRight size={17} /></button>
+            <Link className="footer-link" to="/book-appointment">Request a visit <ArrowUpRight size={17} /></Link>
           </div>
         </div>
         <div className="footer-bottom">
-          <span>© {currentYear} SmileCare Dental Studio. Demo website for illustrative purposes.</span>
+          <span>© {currentYear} SmileCraft Dental Studio. Fictional portfolio demo.</span>
           <span>Made for brighter days <span className="footer-heart">♥</span></span>
         </div>
       </div>
